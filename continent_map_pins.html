@@ -1,0 +1,418 @@
+<title>Map with Random Colored Markers</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="./public/styles/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1 class="large-heading">. . . . . . . . .... my travel map</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#Europe">Europe</a></li>
+        <li><a href="#NAmerica">North America</a></li>
+        <li><a href="#Asia">Asia</a></li>
+        <li><a href="#Africa">Africa</a></li>
+        <li><a href="#Oceana">Oceana</a></li>
+        <li><a href="#SAmerica">South America</a></li>
+    </ul>
+</nav>
+
+
+<main>
+    <section id="Europe">
+        <h1 class="medium-heading">Europe</h1>
+        <h3 class="small-heading">Homebase and the continent I traveled the most. From the Azores in the West to Istanbul in the 
+            East. From Tarifa in the South (or Malta) to Stockholm in the North.
+        </h3>
+    </section>
+
+    <!-- First map container -->
+
+<div id="map" style="height: 500px;"></div>
+    <svg id=""map" width=""204" height="100"></svg>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize the map
+    const mapEurope = L.map('map').setView([50.5, -0.09], 4);
+    
+    // Add a simple base layer
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(mapEurope);
+
+        // Function to generate random colors
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to create a circle marker with a random color
+        function createCircleMarker(lat, lng, popupText) {
+            const randomColor = getRandomColor();
+            const circleMarker = L.divIcon({
+                className: 'custom-circle-marker',
+                html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                            <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                        </svg>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+            L.marker([lat, lng], { icon: circleMarker }).addTo(mapEurope)
+                .bindPopup(popupText);
+        }
+
+        createCircleMarker(51.5, -0.09, "<b>London.</b> <br>Whats to say.<br> Been here 17 times so fare 🥰");
+        createCircleMarker(51.4545, -2.5879, "<b>Bristol</b><br>Let's see some streetart. 👨‍🎨");
+        createCircleMarker(51.3758, -2.3599, "<b>Bath.</b><br>Hello Mr. Darcy📚");
+        createCircleMarker(53.4808, -2.2426, "<b>Manchester</b><br>Let's explore.🔛");
+        createCircleMarker(53.4084, -2.9916, "<b>Liverpool</b><br>Beatles and more.🍓");
+        createCircleMarker(51.3813, 1.3862, "<b>Margate</b><br>British sea town life.🦤");
+        createCircleMarker(51.7520, -1.2577, "<b>Oxford</b><br>Let's discover different worlds.📖");
+        createCircleMarker(50.5640, -2.4456, "<b>Isle of Portland</b><br>Pebble beaches for miles and miles.🌊");
+        createCircleMarker(50.8225, -0.1372, "<b>Bridghton</b><br>Hello busy pier.");
+        createCircleMarker(54.9783, -1.6174, "<b>Newcastle upon Tyne</b><br>Hello north of England.");
+        createCircleMarker(55.9533, -3.1883, "<b>Edinburgh</b><br>Let's get lost in the old town.🏚️");
+        createCircleMarker(55.8642, -4.2518, "<b>Glasgow</b><br>I love modern architecture. 🏢");
+        createCircleMarker(57.4778, -4.2247, "<b>Inverness</b><br>No monsters today. 🧌");
+        createCircleMarker(58.9784, -2.9611, "<b>Orkney</b><br>Let's start island hopping. 🪂");
+        createCircleMarker(59.3673, -2.4286, "<b>North Ronaldsay</b><br>Seals, Seals, Seals. 🦭");
+        createCircleMarker(59.3519, -2.9001, "<b>Papa Westray</b><br>Shortest flight - check.🛫");
+        createCircleMarker(57.8987, -5.1604, "<b>Ullapool</b><br>Scotland nature.");
+        createCircleMarker(57.0050, -5.8280, "<b>Mallaig</b><br>Skye and Rum on the other side.");
+        createCircleMarker(56.4158, -5.4710, "<b>Oban</b><br>Puffins on the horizon. 🐧");
+        createCircleMarker(54.5973, -5.9301, "<b>Belfast</b><br>Taxi drive along the walled city. ");
+        createCircleMarker(55.0067, -7.3183, "<b>Derry</b><br>Murals and a tall city wall.");
+        createCircleMarker(55.2894, -6.2035, "<b>Rathlin Island</b><br>Seals and Puffins. 🦭");
+        createCircleMarker(53.3498, -6.2603, "<b>Dublin</b><br>Young/Old capital of Ireland. ☘️");
+        createCircleMarker(51.8985, -8.4756, "<b>Cork</b><br>Exploring Ireland.");
+        createCircleMarker(52.6680, -8.6305, "<b>Limerick</b><br>I love that city name.");
+        createCircleMarker(53.2707, -9.0568, "<b>Galway</b><br>Hello Angel. 🎣");
+        createCircleMarker(53.1283, -9.6886, "<b>Inishmore</b><br>Irish islands with cliffs.");
+        createCircleMarker(48.8566, 2.3522, "<b>Paris</b><br>The City of Light. 🩵");
+        createCircleMarker(43.48012, -1.55558, "<b>Biarritz</b><br>Surfing culture in France. 🌊");
+        createCircleMarker(43.26271, -2.92528, "<b>Bilbao</b><br>Basque town with a lot of art.");
+        createCircleMarker(40.4168, -3.7038, "<b>Madrid</b><br>Capital of Spain. 🇪🇸");
+        createCircleMarker(41.3851, 2.1734, "<b>Barcelona</b><br>Famous for art and architecture.");
+        createCircleMarker(39.4699, -0.3763, "<b>Valencia</b><br>Known for its City of Arts and Sciences.");
+        createCircleMarker(39.6953, 3.0176, "<b>Majorca</b><br>Beautiful island in the Balearics.");
+        createCircleMarker(38.9067, 1.4206, "<b>Ibiza</b><br>Island famous for its nightlife. 👯");
+        createCircleMarker(37.1773, -3.5986, "<b>Granada</b><br>Home of the Alhambra.");
+        createCircleMarker(36.5271, -6.2886, "<b>Cadiz</b><br>Historic port city. 🚢");
+        createCircleMarker(36.0131, -5.6060, "<b>Tarifa</b><br>Southernmost point of Spain, known for kitesurfing. 🏄‍♀️");
+        createCircleMarker(36.7213, -4.4214, "<b>Malaga</b><br>Port city on the Costa del Sol.");
+        createCircleMarker(37.3891, -5.9845, "<b>Sevilla</b><br>Capital of Andalusia. 💃");
+        createCircleMarker(37.8882, -4.7794, "<b>Cordoba</b><br>Famous for its mosque-cathedral.");
+        createCircleMarker(36.8340, -2.4637, "<b>Almeria</b><br>City on the southeastern coast of Spain.");
+        createCircleMarker(43.3183, -1.9812, "<b>San Sebastian</b><br>Known for its beaches and cuisine. 👩‍🎨");
+        createCircleMarker(38.7223, -9.1393, "<b>Lisbon</b><br>Capital of Portugal. 🇵🇹");
+        createCircleMarker(40.9701, -5.6635, "<b>Salamanca</b><br>Historic university city. 🎓");
+        createCircleMarker(48.5734, 7.7521, "<b>Strasbourg</b><br>Historic city in France.");
+        createCircleMarker(43.2965, 5.3698, "<b>Marseille</b><br>Port city in southern France.");
+        createCircleMarker(43.8766, 5.3952, "<b>Apt</b><br>Charming town in Provence.");
+        createCircleMarker(43.6766, 4.6278, "<b>Arles</b><br>Famous for Roman monuments.");
+        createCircleMarker(43.7102, 7.2620, "<b>Nice</b><br>Beautiful city on the French Riviera.");
+        createCircleMarker(44.6540, -1.1676, "<b>Arcachon</b><br>Seaside town famous for oysters. 🦪");
+        createCircleMarker(47.55839, 7.57327, "<b>Basel</b><br>World city of art. 🖼️");
+        createCircleMarker(59.3293, 18.0686, "<b>Stockholm</b><br>Capital of Sweden. 🇸🇪");
+        createCircleMarker(56.1629, 10.2039, "<b>Aarhus</b><br>City in Denmark.");
+        createCircleMarker(59.9139, 10.7522, "<b>Oslo</b><br>Capital of Norway. 🇳🇴");
+        createCircleMarker(60.3913, 5.3221, "<b>Bergen</b><br>City of fjords in Norway.");
+        createCircleMarker(52.3676, 4.9041, "<b>Amsterdam</b><br>Capital of the Netherlands. 🇳🇱");
+        createCircleMarker(51.9225, 4.4798, "<b>Rotterdam</b><br>Port city in the Netherlands.");
+        createCircleMarker(49.6116, 6.1319, "<b>Luxembourg</b><br>Capital city of Luxembourg. 🇱🇺");
+        createCircleMarker(50.8503, 4.3517, "<b>Brussels</b><br>Capital of Belgium. 🇧🇪");
+        createCircleMarker(50.0755, 14.4378, "<b>Prague</b><br>Capital of the Czech Republic. 🇨🇿");
+        createCircleMarker(48.2082, 16.3738, "<b>Vienna</b><br>Capital of Austria. 🇦🇹");
+        createCircleMarker(47.5577, 11.6926, "<b>Achenkirch</b><br>Village in Tyrol, Austria. ⛰");
+        createCircleMarker(47.4465, 12.3912, "<b>Kitzbühel</b><br>Mountain town in Tyrol, Austria. 🚠");
+        createCircleMarker(45.4408, 12.3155, "<b>Venice</b><br>City of canals, Italy. 🚣‍♂️");
+        createCircleMarker(41.9028, 12.4964, "<b>Rome</b><br>Capital city of Italy. 🇮🇹");
+        createCircleMarker(43.7696, 11.2558, "<b>Florence</b><br>City of art, Italy. 🖌️");
+        createCircleMarker(45.4642, 9.1900, "<b>Milan</b><br>Fashion capital of Italy. 🥻");
+        createCircleMarker(38.1157, 13.3615, "<b>Palermo</b><br>Capital of Sicily, Italy.");
+        createCircleMarker(37.5079, 15.0830, "<b>Catania</b><br>City at the foot of Mount Etna, Sicily.");
+        createCircleMarker(41.1721, 9.3841, "<b>Palau</b><br>Seaside town in Sardinia, Italy. ☀️");
+        createCircleMarker(38.4714, 14.9543, "<b>Lipari</b><br>Largest island in the Aeolian Islands, Italy.");
+        createCircleMarker(37.9838, 23.7275, "<b>Athens</b><br>Capital city of Greece. 🇬🇷");
+        createCircleMarker(39.6243, 19.9217, "<b>Corfu</b><br>Island in the Ionian Sea, Greece.");
+        createCircleMarker(36.3932, 25.4615, "<b>Santorini</b><br>Island in the Cyclades, Greece. 🌅");
+        createCircleMarker(37.1041, 25.3686, "<b>Naxos</b><br>Largest island in the Cyclades, Greece. ");
+        createCircleMarker(37.4467, 25.3289, "<b>Mykonos</b><br>Island known for its beaches and nightlife, Greece.");
+        createCircleMarker(41.0082, 28.9784, "<b>Istanbul</b><br>City bridging Europe and Asia, Turkey.");
+        createCircleMarker(38.4637, -28.6994, "<b>Pico</b><br>Known for its volcanic landscape and wine culture. 🌋");
+        createCircleMarker(38.7369, -27.1160, "<b>Terceira</b><br>Home to the UNESCO World Heritage Site of Angra do Heroísmo.");
+        createCircleMarker(37.7412, -25.4998, "<b>São Miguel</b><br>The largest island in the Azores archipelago.");
+        createCircleMarker(35.9375, 14.3754, "<b>Malta</b><br>Beautiful Mediterranean island nation.");
+        createCircleMarker(36.0451, 14.2299, "<b>Gozo</b><br>Peaceful island known for its scenic views.");
+
+
+        </script>
+
+        <br>
+        <section id="#NAmerica">
+            <h1 class="medium-heading">North America</h1>
+            <h3 class="small-heading">Stops in North America - Let's go west.</h3>
+        </section>
+        <!-- Second map container -->
+<div id="mapNAmerica" style="height: 500px;"></div>
+
+<!-- Script to initialize the second map and add multiple markers with custom icons -->
+<script>
+    // Initialize the second map (USA) and set its view to Los Angeles
+    var mapNAmerica = L.map('mapNAmerica').setView([30.4882, -97.7618], 3);
+
+    // Add OpenStreetMap tile layer to the second map
+     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(mapNAmerica);
+
+
+    function createCircleMarker(lat, lng, popupText) {
+            const randomColor = getRandomColor();
+            const circleMarker = L.divIcon({
+                className: 'custom-circle-marker',
+                html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                            <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                        </svg>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+            L.marker([lat, lng], { icon: circleMarker }).addTo(mapNAmerica)
+                .bindPopup(popupText);
+        }
+
+        createCircleMarker(37.7749, -122.4194, "<b>San Francisco</b><br>Stunning city with great tech.");
+        createCircleMarker(22.0964, -159.5261, "<b>Kauai</b><br>The Garden Isle of Hawaii.");
+        createCircleMarker(20.7984, -156.3319, "<b>Maui</b><br>The Valley Isle of Hawaii.");
+        createCircleMarker(21.4389, -158.0001, "<b>Oahu</b><br>Home to Honolulu and Waikiki Beach.");
+        createCircleMarker(40.7128, -74.0060, "<b>Hello from New York</b><br>The Big Apple.");
+        createCircleMarker(34.0522, -118.2437, "<b>Los Angeles</b><br>City of Angels.");
+        createCircleMarker(30.4882, -97.7618, "<b>Austin</b><br>City of Texas light.");
+        createCircleMarker(25.7617, -80.1918, "<b>Miami</b><br>City of Florida light.");
+        createCircleMarker(38.9072, -77.0369, "<b>Washington DC</b><br>Capital of the United States.");
+        createCircleMarker(36.1699, -115.1398, "<b>Las Vegas</b><br>City of Nevada lights.");
+        createCircleMarker(36.1069, -112.1129, "<b>the Grand Canyon</b><br>Natural Wonder of Arizona.");
+        createCircleMarker(32.7157, -117.1611, "<b>San Diego</b><br>City of California's beaches.");
+        createCircleMarker(34.4208, -119.6982, "<b>Santa Barbara</b><br>City of California charm.");
+        createCircleMarker(47.6062, -122.3321, "<b>Seattle</b><br>City of Washington rain.");
+        createCircleMarker(19.4326, -99.1332, "<b>Mexico City</b><br>Capital of Mexico.");
+        createCircleMarker(17.0732, -96.7266, "<b>Oaxaca</b><br>City of Mexican culture.");
+        createCircleMarker(19.0414, -98.2063, "<b>Puebla</b><br>City of Mexican history.");
+        createCircleMarker(16.7370, -92.6375, "<b>San Cristobal de las Casas</b><br>City in Chiapas, Mexico.");
+        createCircleMarker(19.8301, -90.5349, "<b>Campeche</b><br>Colonial city of Mexico.");
+        createCircleMarker(20.6296, -87.0739, "<b>Playa del Carmen</b><br>Beach town in Mexico.");
+        createCircleMarker(13.1939, -59.5432, "<b>Barbados</b><br>Island in the Caribbean.");
+        createCircleMarker(12.4846, -61.4721, "<b>Carriacou</b><br>Island of Grenada.");
+        createCircleMarker(12.1165, -61.6790, "<b>Grenada</b><br>Main island of Grenada.");
+        createCircleMarker(12.6015, -61.4361, "<b>Union Island</b><br>Part of the Grenadines.");
+        createCircleMarker(13.8586, -61.0670, "<b>Soufriere</b><br>Town in Saint Lucia.");
+
+        </script>
+
+        <br>
+        <section id="Asia">
+            <h1 class="medium-heading">Asia</h1>
+            <h3 class="small-heading">Stops in Asia - Let's go east.</h3>
+        </section>
+        <!-- Second map container -->
+        <div id="mapAsia" style="height: 500px;"></div>
+
+        <!-- Script to initialize the second map and add multiple markers -->
+        <script>
+            // Initialize the second map (USA) and set its view to Bangkok
+            var mapAsia = L.map('mapAsia').setView([12.1563, 100.5018], 4);
+
+            // Add OpenStreetMap tile layer to the second map
+             L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+             attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(mapAsia);
+
+        function createCircleMarker(lat, lng, popupText) {
+        const randomColor = getRandomColor();
+        const circleMarker = L.divIcon({
+            className: 'custom-circle-marker',
+            html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                    </svg>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+        L.marker([lat, lng], { icon: circleMarker }).addTo(mapAsia)
+            .bindPopup(popupText);
+    }
+
+        createCircleMarker(28.6139, 77.2090, "<b>Delhi</b><br>Capital city of India.");
+        createCircleMarker(27.1767, 78.0081, "<b>Agra</b><br>Home of the Taj Mahal.");
+        createCircleMarker(26.9124, 75.7873, "<b>Jaipur</b><br>Pink City of India.");
+        createCircleMarker(24.5854, 73.7125, "<b>Udaipur</b><br>City of Lakes, Rajasthan.");
+        createCircleMarker(23.0225, 72.5714, "<b>Ahmedabad</b><br>City of Gujarat.");
+        createCircleMarker(19.0760, 72.8777, "<b>Mumbai</b><br>Financial capital of India.");
+        createCircleMarker(15.5430, 73.7553, "<b>Calangute</b><br>Beach town in Goa.");
+        createCircleMarker(15.0091, 74.0230, "<b>Palolem Beach</b><br>Beautiful beach in Goa.");
+        createCircleMarker(6.0328, 80.2170, "<b>Galle</b><br>Historic city in Sri Lanka.");
+        createCircleMarker(5.9731, 80.4297, "<b>Weligama</b><br>Coastal town in Sri Lanka.");
+        createCircleMarker(3.9426, 73.4860, "<b>Maafushi</b><br>Island in the Maldives.");
+        createCircleMarker(3.7350, 73.4137, "<b>Fulidhoo</b><br>Island in the Vaavu Atoll, Maldives.");
+        createCircleMarker(1.3521, 103.8198, "<b>Singapore</b><br>City-state in Southeast Asia.");
+        createCircleMarker(13.7563, 100.5018, "<b>Bangkok</b><br>Capital of Thailand.");
+        createCircleMarker(12.0433, 102.3232, "<b>Koh Chang</b><br>Island in Thailand.");
+        createCircleMarker(14.3532, 100.5689, "<b>Ayutthaya</b><br>Historic city in Thailand.");
+        createCircleMarker(18.7883, 98.9853, "<b>Chiang Mai</b><br>City in Northern Thailand.");
+        createCircleMarker(19.9107, 99.8406, "<b>Chiang Rai</b><br>City in Northern Thailand.");
+        createCircleMarker(6.4887, 99.3032, "<b>Koh Lipe</b><br>Island in Southern Thailand.");
+        createCircleMarker(7.6144, 99.1448, "<b>Koh Lanta</b><br>Island in Southern Thailand.");
+        createCircleMarker(7.7390, 98.7711, "<b>Koh Phi Phi</b><br>Famous island in Thailand.");
+        createCircleMarker(7.6783, 98.7654, "<b>Koh Phi Phi Leh</b><br>The Beach was filmed here.");
+        createCircleMarker(-6.2088, 106.8456, "<b>Jakarta</b><br>Capital of Indonesia.");
+        createCircleMarker(-6.9175, 107.6191, "<b>Bandung</b><br>City in West Java, Indonesia.");
+        createCircleMarker(-7.7956, 110.3695, "<b>Yogyakarta</b><br>Cultural hub in Indonesia.");
+        createCircleMarker(-8.3405, 115.0920, "<b>Bali</b><br>Island of Indonesia.");
+        createCircleMarker(1.5533, 110.3592, "<b>Kuching</b><br>City in Sarawak, Borneo.");
+        createCircleMarker(5.9804, 116.0735, "<b>Kota Kinabalu</b><br>City in Sabah, Borneo.");
+        createCircleMarker(5.8400, 118.1179, "<b>Sandakan</b><br>City in Sabah, Borneo.");
+        createCircleMarker(5.5918, 118.2832, "<b>Kinabatangan</b><br>Wildlife area in Sabah, Borneo.");
+
+        </script>
+
+        <br>
+        <section id="Africa">
+            <h1 class="medium-heading">Africa</h1>
+            <h3 class="small-heading">Stops in Africa - Let's go to the south.</h3>
+        </section>
+         <!-- Second map container -->
+        <div id="mapAfrica" style="height: 500px;"></div>
+
+         <!-- Script to initialize the second map and add multiple markers -->
+        <script>
+            // Initialize the Africa map (USA)
+            var mapAfrica = L.map('mapAfrica').setView([3.8480, 11.5021], 3);
+
+            // Add OpenStreetMap tile layer to the second map
+             L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(mapAfrica);
+
+        function createCircleMarker(lat, lng, popupText) {
+        const randomColor = getRandomColor();
+        const circleMarker = L.divIcon({
+            className: 'custom-circle-marker',
+            html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                    </svg>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+        L.marker([lat, lng], { icon: circleMarker }).addTo(mapAfrica)
+            .bindPopup(popupText);
+    }
+
+        createCircleMarker(33.5731, -7.5898, "<b>Casablanca</b><br>City of Morocco light.");
+        createCircleMarker(34.0181, -5.0078, "<b>Fes</b><br>Cultural capital of Morocco.");
+        createCircleMarker(35.7595, -5.8340, "<b>Tangier</b><br>Port city of Morocco.");
+        createCircleMarker(31.6295, -7.9811, "<b>Marrakesh</b><br>City of Morocco charm.");
+        createCircleMarker(28.0933, -17.2222, "<b>La Gomera</b><br>Canary Island, Spain.");
+        createCircleMarker(28.7280, -13.8671, "<b>Corralejo</b><br>Beach town of Fuerteventura.");
+        createCircleMarker(-26.2041, 28.0473, "<b>Johannesburg</b><br>Largest city in South Africa.");
+        createCircleMarker(-29.8587, 31.0218, "<b>Durban</b><br>City of South Africa's coast.");
+        createCircleMarker(-33.9610, 25.6144, "<b>Gqeberha</b><br>City of Eastern Cape, South Africa.");
+        createCircleMarker(-31.9829, 29.1512, "<b>Coffee Bay</b><br>Coastal village of South Africa.");
+        createCircleMarker(-34.0527, 23.3716, "<b>Plettenberg Bay</b><br>Resort town of South Africa.");
+        createCircleMarker(-33.9249, 18.4241, "<b>Cape Town</b><br>City of South Africa's coast.");
+        createCircleMarker(32.7607, -16.9595, "<b>Madeira</b><br>Known as the Pearl of the Atlantic.");
+        createCircleMarker(31.9539, 35.9106, "<b>Amman</b><br>Capital city of Jordan, rich in history.");
+        createCircleMarker(29.5324, 35.0063, "<b>Aqaba</b><br>Port city known for its beautiful beaches and diving spots.");
+        createCircleMarker(30.3285, 35.4444, "<b>Petra</b><br>Historic archaeological city, known as the 'Rose City'.");
+        createCircleMarker(29.5766, 35.4210, "<b>Wadi Rum</b><br>Desert valley known for its stunning landscapes.");
+
+
+
+        </script>
+
+        
+        <br>
+        <section id="Oceana">
+            <h1 class="medium-heading">Oceania</h1>
+            <h3 class="small-heading">Still on the list as travel destinations</h3>
+        </section>
+         <!-- Second map container -->
+        <div id="mapOceania" style="height: 500px;"></div>
+
+         <!-- Script to initialize the second map and add multiple markers -->
+        <script>
+            // Initialize the second map (USA) and set its view to Los Angeles
+            var mapOceania = L.map('mapOceania').setView([-27.46, 153.2], 3);
+         // Add OpenStreetMap tile layer to the second map
+             L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(mapOceania);
+
+        function createCircleMarker(lat, lng, popupText) {
+        const randomColor = getRandomColor();
+        const circleMarker = L.divIcon({
+            className: 'custom-circle-marker',
+            html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                    </svg>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+        L.marker([lat, lng], { icon: circleMarker }).addTo(mapOceania)
+            .bindPopup(popupText);
+    }
+
+        </script>
+
+              <br>
+        <section id="#SAmerica">
+            <h1 class="medium-heading">South America</h1>
+            <h3 class="small-heading">Still on the list as travel destinations</h3>
+        </section>
+       
+        <div id="mapSAmerica" style="height: 500px;"></div>
+
+       
+        <script>
+            // Initialize the second map (USA) and set its view to Los Angeles
+            var mapSAmerica = L.map('mapSAmerica').setView([-25.3, -57.6], 3);
+         // Add OpenStreetMap tile layer to the second map
+             L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(mapSAmerica);
+           
+        function createCircleMarker(lat, lng, popupText) {
+        const randomColor = getRandomColor();
+        const circleMarker = L.divIcon({
+            className: 'custom-circle-marker',
+            html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                    </svg>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+        L.marker([lat, lng], { icon: circleMarker }).addTo(mapSAmerica)
+            .bindPopup(popupText);
+    }
+        </script>
+
+        
+    </main>
+
+    <footer>
+        <h3 class="small-heading">&copy; 2024, your curious traveler Ulrike. All rights reserved.</h3>
+        <br>
+        <a class="link-link" href="index.html" target="_blank">Back to my Website </a></footer>
+        <br>
+        <br>
+    </footer>
+
+</body>
+</html>
