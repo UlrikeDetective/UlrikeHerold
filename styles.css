@@ -64,6 +64,13 @@ body {
     margin: auto;
 }
 
+.picture img {
+    width: 100%;
+    max-width: 350px; 
+    display: block;
+    margin: auto;
+}
+
 .coding {
     display: flex;
     flex-direction: column;
@@ -272,6 +279,9 @@ footer p {
     }
 
     .typing {
+        text-align: center;
+    }
+    .picture {
         text-align: center;
     }
 
