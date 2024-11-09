@@ -41,7 +41,7 @@ body {
 
 .hero h4 {
     margin: 5px 0 0 0;
-    font-family: 'Outfit', serif;
+    font-family: "Cutive Mono", monospace;
     font-weight: normal;
 }
 .resume img {
@@ -91,7 +91,7 @@ nav li {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Cutive Mono", monospace;
 }
 
 /* Main content styles */
@@ -109,7 +109,7 @@ section {
 }
 
 h2 {
-    font-family: 'Outfit', sans-serif;
+    ffont-family: "Cutive Mono", monospace;
     color: #3b5998; 
     border-bottom: 2px solid #2c3e50;
     padding-bottom: 10px;
@@ -119,7 +119,7 @@ h2 {
 
 h4 {
     color: #3b5998;
-    font-family: "Outfit", sans-serif;
+    font-family: "Cutive Mono", monospace;
     text-align: center;
 }
 
