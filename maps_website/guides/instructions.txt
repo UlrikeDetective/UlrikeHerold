@@ -1,0 +1,124 @@
+1. Set Up the Project Environment
+Install Node.js and npm for backend development.
+Install PostgreSQL for the database.
+Create a directory for your project and initialize it with npm init.
+2. Set Up Backend with Express.js
+Install necessary packages:
+bash
+Copy code
+npm install express ejs pg body-parser axios dotenv
+Create the server file (server.js):
+javascript
+Copy code
+const express = require('express');
+const bodyParser = require('body-parser');
+const { Pool } = require('pg');
+const axios = require('axios');
+require('dotenv').config();
+
+const app = express();
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public')); // Serve CSS and JS
+app.set('view engine', 'ejs');
+
+// Render the main map page
+app.get('/', async (req, res) => {
+    const places = await pool.query('SELECT * FROM places');
+    res.render('index', { places: places.rows });
+});
+
+// Add a new place
+app.post('/add-place', async (req, res) => {
+    const { city, country, year } = req.body;
+    const location = await getLatLng(city, country);
+
+    if (location) {
+        await pool.query(
+            'INSERT INTO places (city, country, year, latitude, longitude) VALUES ($1, $2, $3, $4, $5)',
+            [city, country, year, location.lat, location.lng]
+        );
+    }
+    res.redirect('/');
+});
+
+// Function to get latitude and longitude using an API (e.g., OpenCage)
+async function getLatLng(city, country) {
+    try {
+        const response = await axios.get('https://api.opencagedata.com/geocode/v1/json', {
+            params: {
+                q: `${city}, ${country}`,
+                key: process.env.OPENCAGE_API_KEY,
+            },
+        });
+        const data = response.data.results[0].geometry;
+        return { lat: data.lat, lng: data.lng };
+    } catch (err) {
+        console.error('Error fetching coordinates:', err);
+        return null;
+    }
+}
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+3. Set Up PostgreSQL
+Create a database and table for storing places:
+sql
+Copy code
+CREATE TABLE places (
+    id SERIAL PRIMARY KEY,
+    city VARCHAR(255),
+    country VARCHAR(255),
+    year VARCHAR(4),
+    latitude FLOAT,
+    longitude FLOAT
+);
+Set the DATABASE_URL in a .env file.
+4. Create Frontend Views
+Replace your existing HTML with a dynamic EJS template (views/index.ejs):
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Map</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My Travel Map</h1>
+    </header>
+
+    <form action="/add-place" method="POST">
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="country" placeholder="Country" required>
+        <input type="text" name="year" placeholder="Year" required>
+        <button type="submit">Add Place</button>
+    </form>
+
+    <div id="map" style="height: 500px;"></div>
+
+    <script>
+        const map = L.map('map').setView([0, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        const places = <%= JSON.stringify(places) %>;
+
+        places.forEach(place => {
+            L.marker([place.latitude, place.longitude])
+                .addTo(map)
+                .bindPopup(`<b>${place.city}</b>, ${place.country} (${place.year})`);
+        });
+    </script>
+</body>
+</html>
+5. Publish Your Website
+Host your site using platforms like Render, Vercel, or Heroku.
+Ensure your PostgreSQL database is accessible online (configure secure credentials).
