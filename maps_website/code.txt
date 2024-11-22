@@ -1,0 +1,129 @@
+<title>Map with Random Colored Markers</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="./public/styles/main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1 class="large-heading">. . . . . . . . .... my travel map</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#Europe">Europe</a></li>
+        <li><a href="#NAmerica">North America</a></li>
+        <li><a href="#Asia">Asia</a></li>
+        <li><a href="#Africa">Africa</a></li>
+        <li><a href="#Oceana">Oceana</a></li>
+        <li><a href="#SAmerica">South America</a></li>
+    </ul>
+</nav>
+
+
+<main>
+    <section id="Europe">
+        <h1 class="medium-heading">Europe</h1>
+        <h3 class="small-heading">Homebase and the continent I traveled the most. From the Azores in the West to Istanbul in the 
+            East. From Tarifa in the South (or Malta) to Stockholm in the North.
+        </h3>
+    </section>
+
+    <!-- First map container -->
+
+<div id="map" style="height: 500px;"></div>
+    <svg id=""map" width=""204" height="100"></svg>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize the map
+    const mapEurope = L.map('map').setView([50.5, -0.09], 4);
+    
+    // Add a simple base layer
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(mapEurope);
+
+        // Function to generate random colors
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to create a circle marker with a random color
+        function createCircleMarker(lat, lng, popupText) {
+            const randomColor = getRandomColor();
+            const circleMarker = L.divIcon({
+                className: 'custom-circle-marker',
+                html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                            <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                        </svg>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+            L.marker([lat, lng], { icon: circleMarker }).addTo(mapEurope)
+                .bindPopup(popupText);
+        }
+
+        createCircleMarker(51.5, -0.09, "<b>London.</b> <br>Whats to say.<br> Been here 17 times so fare 🥰");
+        createCircleMarker(51.4545, -2.5879, "<b>Bristol</b><br>Let's see some streetart. 👨‍🎨");
+
+
+        </script>
+
+        <br>
+        <section id="#NAmerica">
+            <h1 class="medium-heading">North America</h1>
+            <h3 class="small-heading">Stops in North America - Let's go west.</h3>
+        </section>
+        <!-- Second map container -->
+<div id="mapNAmerica" style="height: 500px;"></div>
+
+<!-- Script to initialize the second map and add multiple markers with custom icons -->
+<script>
+    // Initialize the second map (USA) and set its view to Los Angeles
+    var mapNAmerica = L.map('mapNAmerica').setView([30.4882, -97.7618], 3);
+
+    // Add OpenStreetMap tile layer to the second map
+     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(mapNAmerica);
+
+
+    function createCircleMarker(lat, lng, popupText) {
+            const randomColor = getRandomColor();
+            const circleMarker = L.divIcon({
+                className: 'custom-circle-marker',
+                html: `<svg width="20" height="20" viewBox="0 0 20 20">
+                            <circle cx="10" cy="10" r="9" fill="${randomColor}" />
+                        </svg>`,
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+            L.marker([lat, lng], { icon: circleMarker }).addTo(mapNAmerica)
+                .bindPopup(popupText);
+        }
+
+        createCircleMarker(37.7749, -122.4194, "<b>San Francisco</b><br>Stunning city with great tech.");
+        createCircleMarker(22.0964, -159.5261, "<b>Kauai</b><br>The Garden Isle of Hawaii.");
+
+  </script>
+
+   
+    </main>
+
+    <footer>
+        <h3 class="small-heading">&copy; 2024, your curious traveler Ulrike. All rights reserved.</h3>
+        <br>
+        <a class="link-link" href="index.html" target="_blank">Back to my Website </a></footer>
+        <br>
+        <br>
+    </footer>
+
+</body>
+</html>
