@@ -1,0 +1,162 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    background: #f6f6f6;
+    color: #0d0f0f;
+  }
+  
+  .large-heading {
+    font-family: "Pacifico", cursive; /* Your chosen font */
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6em; /* Adjust this value as needed */
+  }
+  
+  .medium-heading {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+  }
+  .small-heading {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  nav a {
+    font-family: "Cutive Mono", monospace;
+    font-size: 1.4em; /* Adjust the size as needed */
+    color: #333; /* Change the color as needed */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  nav a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .link-link {
+    color: #2c3e50;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 1.1em;
+    position: relative;
+  }
+  
+  .link-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #2980b9;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .link-link:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+  .leaflet-popup-content {
+    font-family: "Cutive Mono", monospace;
+  }
+  
+  
+  .ag-canvas {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 6rem 6rem; 
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    padding: 8rem 8rem;
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: -1;
+    margin-top: -90px;
+  }
+  
+  .map-container {
+    margin: 6rem 6rem; /* Adjusts space on the left and right */
+    padding: 3rem;  /* Optional: adds padding inside the container */
+    background: #fff; /* Optional: background color for visibility */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+  }
+  
+  
+  .ag-canvas_svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin-left: 4rem;
+  }
+  .ag-canvas_svg path {
+    fill: #BFE4EA;
+    fill-opacity: 1;
+    stroke: #78CDE0;
+    stroke-opacity: 1;
+    stroke-width: 0.5;
+    transition: 0.5s;
+  }
+  
+  .ul {
+      fill: #BFE4EA;
+      fill-opacity: 1;
+      stroke: #78CDE0;
+      stroke-opacity: 1;
+      stroke-width: 0.5;
+      transition: 0.5s;
+    }
+  
+  @media screen and (max-width: 767px) {
+    .ag-canvas {
+      -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      height: auto;
+      padding: 4rem 4rem 4rem;
+    }
+  
+    .ag-canvas_svg {
+      max-height: calc(100% - 6rem);
+      margin-left: 0;
+    }
+  }
+  
+  input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #c1eff1;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .custom-circle-marker svg {
+    overflow: visible;
+  }
+  
