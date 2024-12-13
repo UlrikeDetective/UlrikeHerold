@@ -51,6 +51,7 @@ nav a:hover {
   margin: 0 5px;
   font-size: 1.1em;
   position: relative;
+  font-family: "Cutive Mono", monospace;
 }
 
 .link-link::after {
