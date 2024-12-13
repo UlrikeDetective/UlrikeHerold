@@ -16,10 +16,10 @@ body {
 }
 
 .large-heading {
-  font-family: "Pacifico", cursive; /* Your chosen font */
+  font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 6em; /* Adjust this value as needed */
+  font-size: 6em; 
 }
 
 .medium-heading {
