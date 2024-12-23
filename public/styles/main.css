@@ -161,6 +161,21 @@ input {
   overflow: visible;
 }
 
+/* Footer styles */
+footer {
+    background-color: #34495e; /* Dark grey */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Footer styles */
+footer {
+    background-color: #3b5998;
+    padding: 50px 0 20px;
+    text-align: center;
+    color: #fff;
+    font-family: "Cutive Mono", monospace;
+}
 .bottom-container {
     display: flex;
     text-align: center; /* Center the content */
