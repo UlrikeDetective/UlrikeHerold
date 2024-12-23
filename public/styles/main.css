@@ -160,3 +160,13 @@ input {
 .custom-circle-marker svg {
   overflow: visible;
 }
+
+.bottom-container {
+    display: flex;
+    text-align: center; /* Center the content */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3vh;
+}
