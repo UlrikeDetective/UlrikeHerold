@@ -161,13 +161,7 @@ input {
   overflow: visible;
 }
 
-/* Footer styles */
-footer {
-    background-color: #34495e; /* Dark grey */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
+
 /* Footer styles */
 footer {
     background-color: #3b5998;
