@@ -164,7 +164,7 @@ input {
 /* Footer styles */
 footer {
     background-color: #B8B8B8;
-    padding: 50px 20px;
+    padding: 50px 20px 50px 20px;
     text-align: center;
     color: #fff;
     font-family: "Cutive Mono", monospace;
@@ -177,7 +177,7 @@ footer {
     justify-content: center;
     width: 100%;
     min-height: 100px; /* Adjust height */
-    gap: 10px; /* Add spacing between elements */
+    gap: 20px; /* Add spacing between elements */
 }
 
 .link-link {
@@ -190,6 +190,6 @@ footer {
 }
 
 .copyright {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 0.9rem;
 }
