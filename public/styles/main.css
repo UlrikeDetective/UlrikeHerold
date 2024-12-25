@@ -177,7 +177,7 @@ footer {
     justify-content: center;
     width: 100%;
     min-height: 100px; /* Adjust height */
-    gap: 20px; /* Add spacing between elements */
+    gap: 15px; /* Add spacing between elements */
 }
 
 .link-link {
@@ -190,6 +190,6 @@ footer {
 }
 
 .copyright {
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 0.9rem;
 }
