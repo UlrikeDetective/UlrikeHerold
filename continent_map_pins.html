@@ -68,12 +68,22 @@
 </main>
 
 <footer>
-    <h3 class="small-heading">&copy; your curious traveler Ulrike. <span id="current-year"></span> All rights reserved.</h3>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+
     <br>
-    <a class="link-link" href="index.html" target="_blank">Back to my Website</a>
+
+        <div class="bottom-container2"><br>
+            <a class="link-link" href="index.html" target="_blank">Back to my Website</a>
+            <p class="copyright">&copy; your curious traveler Ulrike. <span id="current-year"></span> All rights reserved.</p>
+            <script>
+              document.getElementById('current-year').textContent = new Date().getFullYear();
+                 </script>
+        </div>
+        <div class="bottom-container3">
+            <article> <h4>Ulrike's Travel Website `<time>` Element</h4>
+              <p>First published on: <time datetime="2024-11-22">November 22, 2024</time></p>
+              <p>Updated on: <time datetime="2024-12-25">December 25, 2024</time></p>
+            </article>
+        </div>
 </footer>
 
 <script>
