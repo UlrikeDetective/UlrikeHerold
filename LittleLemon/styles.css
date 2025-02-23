@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f8f3e4; /* Light yellow background */
+    color: #4f5d22; /* Olive green text color */
+    line-height: 1.6;
+}
+
+header {
+    display: grid;
+    place-items: center;
+    background-color: #ffcc00; 
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 5rem;
+}
+
+.logo {
+    width: 10rem; /* Adjust as needed */
+}
+.rising-sun {
+    position: absolute;
+    bottom: 0;
+    left: -20rem; /* Initially positioned off-screen to the left */
+    width: 45rem; /* Adjust the size of the image */
+    animation: rise 15s ease-in-out forwards; /* Apply the animation */
+}
+
+@keyframes rise {
+    0% {
+        left: -10%; /* Starts off the left side */
+        bottom: 25rem;
+    }
+    50% {
+        left: 60%; /* Moves to the center horizontally */
+        bottom: 30rem; /* Starts rising */
+        transform: translateX(-50%); /* Centers it properly */
+    }
+    100% {
+        left: 70%;
+        bottom: 25rem; /* Ends at the right side */
+    }
+}
+nav {
+    background-color: #ffcc00;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: #b27204 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d48e11;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.8s ease-in-out;
+}
+
+nav a:hover {
+    color: #b27204;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.banner {
+    text-align: center;
+    background-color: #f2c94c; /* Lighter yellow for banner */
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: #d48e11; /* Warm yellow */
+}
+
+.banner p {
+    font-size: 1.25rem;
+    color: #7f6d3d; /* Darker yellow */
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.column {
+    background-color: #ffffff; /* White background for columns */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.column h2 {
+    font-size: 1.5rem;
+    color: #4f5d22; /* Olive green */
+    margin: 1rem 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #7f6d3d; /* Olive brown footer background */
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 8rem; /* Adjust logo size */
+}
+
+.footer-info {
+    align-self: center;
+    font-size: 1rem;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for the rotation */
+}
+
+.column img:hover {
+    transform: rotate(90deg); /* Rotates the image 90 degrees */
+}
+
+.return-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #4f5d22;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #b27204;
+    color: #fff;
+}
