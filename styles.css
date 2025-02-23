@@ -56,7 +56,9 @@ body {
     text-align: center;
     row-gap: 2rem;
 }
-
+body h2 h3 {
+    font-weight: bolder;
+}
 .typing img {
     width: 100%;
     max-width: 150px; 
