@@ -55,7 +55,15 @@
             <img src="Lucky-Shrub-logos/Asset 3@3x.png" width="20px" alt="Lucky Shrub Footer Logo">
         </div>
         <div class="footer-info">
-            <p>&copy; 2025 Lucky Shrub. All rights reserved. Garden design firm in Tucson, AZ.</p>
+            <p class="copyright">&copy; Ulrike Herold - <span id="current-year"></span> All rights reserved.</p>
+            <p>&copy; Lucky Shrub. Garden design firm in the desert somewhere.</p>
+            <script>
+              document.getElementById('current-year').textContent = new Date().getFullYear();
+                 </script>
+            <article> <h4>Little Lemon `<time>` Element</h4>
+                <p>First published on: <time datetime="2025-02-23">February 23, 2025</time></p>
+                <!-- <p>Updated on: <time datetime="2024-12-26">December 26, 2024</time></p> -->
+                </article>
         </div>
     </footer>
 </body>
