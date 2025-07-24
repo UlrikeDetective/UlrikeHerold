@@ -7,57 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scene scene-1">
-        <div class="window">
-            <div class="sun"></div>
-        </div>
-        <div class="desk">
-            <div class="laptop">
-                <div class="laptop-screen">
-                    <div class="laptop-text">coffee culture</div>
-                </div>
-                <div class="laptop-base"></div>
+    <div class="main-content">
+        <div class="scene scene-1">
+            <div class="window">
+                <div class="sun"></div>
             </div>
-            <div class="coffee-cup">
-                <div class="coffee"></div>
-                <div class="handle"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="scene scene-2 hidden">
-        <div class="figure-container">
-            <div class="figure figure-1">
-                <div class="face">
-                    <div class="mouth"></div>
-                </div>
-                <div class="arm left">
-                    <div class="forearm"></div>
-                </div>
-                <div class="arm right">
-                    <div class="forearm"></div>
-                </div>
+            <div class="desk">
                 <div class="laptop">
-                    <div class="laptop-screen"></div>
-                    <div class="laptop-base"></div>
-                </div>
-                <div class="coffee-cup">
-                    <div class="coffee"></div>
-                    <div class="handle"></div>
-                </div>
-            </div>
-            <div class="figure figure-2">
-                <div class="face">
-                    <div class="mouth"></div>
-                </div>
-                <div class="arm left">
-                    <div class="forearm"></div>
-                </div>
-                <div class="arm right">
-                    <div class="forearm"></div>
-                </div>
-                <div class="laptop">
-                    <div class="laptop-screen"></div>
+                    <div class="laptop-screen">
+                        <div class="laptop-text">coffee culture</div>
+                    </div>
                     <div class="laptop-base"></div>
                 </div>
                 <div class="coffee-cup">
@@ -66,8 +25,62 @@
                 </div>
             </div>
         </div>
+
+        <div class="scene scene-2 hidden">
+            <div class="figure-container">
+                <div class="figure figure-1">
+                    <div class="face">
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="arm left">
+                        <div class="forearm"></div>
+                    </div>
+                    <div class="arm right">
+                        <div class="forearm"></div>
+                    </div>
+                    <div class="laptop">
+                        <div class="laptop-screen"></div>
+                        <div class="laptop-base"></div>
+                    </div>
+                    <div class="coffee-cup">
+                        <div class="coffee"></div>
+                        <div class="handle"></div>
+                    </div>
+                </div>
+                <div class="figure figure-2">
+                    <div class="face">
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="arm left">
+                        <div class="forearm"></div>
+                    </div>
+                    <div class="arm right">
+                        <div class="forearm"></div>
+                    </div>
+                    <div class="laptop">
+                        <div class="laptop-screen"></div>
+                        <div class="laptop-base"></div>
+                    </div>
+                    <div class="coffee-cup">
+                        <div class="coffee"></div>
+                        <div class="handle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <footer>
+        <div class="return-link">
+            <a href="../index.html" class="return-button">Return to Home</a>
+        </div>
+        <div class="footer-info">
+            <p class="copyright">&copy; Ulrike Herold - <span id="current-year"></span> MIT License.</p>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </footer>
     <script>
         const laptop = document.querySelector('.scene-1 .laptop');
         const scene1 = document.querySelector('.scene-1');
@@ -78,5 +91,7 @@
             scene2.classList.remove('hidden');
         });
     </script>
+</body>
+</html>
 </body>
 </html>
