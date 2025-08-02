@@ -69,6 +69,7 @@ body {
     margin: auto;
 }
 
+
 .picture img {
     width: 100%;
     max-width: 350px; 
@@ -301,6 +302,9 @@ footer p {
     }
 
     .picture {
+        text-align: center;
+    }
+    .blog {
         text-align: center;
     }
 
