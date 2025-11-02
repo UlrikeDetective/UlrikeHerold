@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Halloween</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="ambient-sound" loop autoplay src="sounds/creepy-untuned-music-box.mp3"></audio>
+    <button id="sound-toggle">Stop Sound</button>
+    <div class="fog-container"></div>
+    <div class="container">
+        <div class="web-container">
+            <!-- Spiderweb lines -->
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+            <div class="web-line"></div>
+        </div>
+        <div class="spider">
+            <div class="spider-body"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="eye top"></div>
+            <div class="eye bottom"></div>
+        </div>
+        <div class="masking-container">
+            <h1 class="masked-text">Countdown to Halloween</h1>
+        </div>
+
+        <div class="matrix-container" id="countdown-matrix-container">
+            <div id="countdown" class="matrix-text" data-text=""></div>
+            <div class="rain"></div>
+        </div>
+        <div class="flex-section">
+            <div class="ghost-container">
+                <div class="ghost">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="pumpkin">
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <div id="todo-list-container">
+                <h2>Halloween Prep To-Do List</h2>
+                <div class="todo-list"></div>
+            </div>
+        </div>
+        <a href="trick-or-treat.html">Discover a Halloween Surprise</a>
+    </div>
+    <script src="app.js"></script>
+    <footer>
+        <p>&copy; <span id="year"></span> Ulrike Herold. All rights reserved.</p>
+        <p>The project was built for the <a href="https://dev.to/devteam/join-our-latest-frontend-challenge-halloween-edition-55oi" target="_blank">DEV Challenge Frontend Challenge: Halloween Edition 🦇</a></p>
+        <div class="return-link"> <a href="../index.html" class="return-button">Return to Home</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Quill Pen Writing</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        .pen {
+            position: absolute;
+            width: 120px;
+            height: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            bottom: 50px;
+            left: 30px;
+            transform: rotate(-15deg);
+            z-index: 2;
+            animation: write 3s ease-in-out infinite;
+        }
+
+        .pen::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background: #555;
+            border-radius: 2px 0 0 2px;
+            right: -15px;
+            clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+        }
+
+        .feather {
+            position: absolute;
+            width: 80px;
+            height: 25px;
+            background: linear-gradient(to right, #f0f0f0, #d9d9d9);
+            border-radius: 0 12px 12px 0;
+            bottom: 45px;
+            left: 100px;
+            transform-origin: left;
+            animation: sway 4s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        .feather::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid #f0f0f0;
+            left: 80px;
+            bottom: -25px;
+        }
+
+        .feather::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 25px;
+            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+            left: 0;
+            bottom: -25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .lace {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            bottom: 40px;
+            left: 40px;
+            z-index: 3;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        .lace::before,
+        .lace::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            top: 5px;
+        }
+
+        .lace::before {
+            left: 10px;
+        }
+
+        .lace::after {
+            right: 10px;
+        }
+
+        .lace-center {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            bottom: 8px;
+            left: 37px;
+        }
+
+        @keyframes sway {
+            from {
+                transform: rotate(-5deg);
+            }
+            to {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes write {
+            0%, 100% {
+                left: 30px;
+                transform: rotate(-15deg);
+            }
+            25% {
+                left: 80px;
+                transform: rotate(-5deg);
+            }
+            50% {
+                left: 130px;
+                transform: rotate(5deg);
+            }
+            75% {
+                left: 80px;
+                transform: rotate(-5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pen"></div>
+        <div class="feather"></div>
+        <div class="lace"></div>
+        <div class="lace-center"></div>
+    </div>
+</body>
+</html>
