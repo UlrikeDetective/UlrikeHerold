@@ -143,35 +143,49 @@
     Papa.parse('Data/mapPlaces.csv', {
         download: true,
         header: true,
+        skipEmptyLines: true,
         complete: function(results) {
+            if (!results || !results.data || results.data.length === 0) {
+                console.error('No data parsed from CSV. Check file path and content.');
+                alert('Could not parse data from Data/mapPlaces.csv. Please ensure the file is not empty and the path is correct on the server.');
+                return;
+            }
+
             results.data.forEach(row => {
-                console.log(row); // Log each row to the console
                 const lat = parseFloat(row.latitude);
                 const lng = parseFloat(row.longitude);
-                const visits = parseInt(row.visits, 10);
-                const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Review: ${row.reviews}`;
-                // const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Years: ${row.years}<br>Review: ${row.reviews}`;
-                switch (row.continent) {
-                    case 'Europe':
-                        createCircleMarker(mapEurope, lat, lng, popupText, visits);
-                        break;
-                    case 'North America':
-                        createCircleMarker(mapNAmerica, lat, lng, popupText, visits);
-                        break;
-                    case 'Asia':
-                        createCircleMarker(mapAsia, lat, lng, popupText, visits);
-                        break;
-                    case 'Africa':
-                        createCircleMarker(mapAfrica, lat, lng, popupText, visits);
-                        break;
-                    case 'Oceania':
-                        createCircleMarker(mapOceania, lat, lng, popupText, visits);
-                        break;
-                    case 'South America':
-                        createCircleMarker(mapSAmerica, lat, lng, popupText, visits);
-                        break;
+
+                if (row && !isNaN(lat) && !isNaN(lng)) {
+                    console.log(row); // Log each valid row to the console
+                    const visits = parseInt(row.visits, 10) || 1;
+                    const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Review: ${row.reviews}`;
+                    // const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Years: ${row.years}<br>Review: ${row.reviews}`;
+                    switch (row.continent) {
+                        case 'Europe':
+                            createCircleMarker(mapEurope, lat, lng, popupText, visits);
+                            break;
+                        case 'North America':
+                            createCircleMarker(mapNAmerica, lat, lng, popupText, visits);
+                            break;
+                        case 'Asia':
+                            createCircleMarker(mapAsia, lat, lng, popupText, visits);
+                            break;
+                        case 'Africa':
+                            createCircleMarker(mapAfrica, lat, lng, popupText, visits);
+                            break;
+                        case 'Oceania':
+                            createCircleMarker(mapOceania, lat, lng, popupText, visits);
+                            break;
+                        case 'South America':
+                            createCircleMarker(mapSAmerica, lat, lng, popupText, visits);
+                            break;
+                    }
                 }
             });
+        },
+        error: function(error) {
+            console.error('Error loading or parsing CSV:', error);
+            alert('Could not load Data/mapPlaces.csv. Check that the file exists at the correct path on the server and is accessible.');
         }
     });
 </script>
