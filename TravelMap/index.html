@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map with Random Colored Markers</title>
-    <meta property="og:title" content="on the road">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="public/pictures/MyTravelMapEurope.png">
-    <meta property="og:url" content="https://ulrikedetective.github.io/UlrikeHerold/continent_map_pins.html">
-    <meta property="og:description" content="Travel the world!">
-    <meta property="og:locale" content="en_DE">
-    <meta property="og:site_name" content="Where I've been so fare!">
-
+    <title>On the Road | Travel Map</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    <link rel="stylesheet" href="./public/styles/main.css">
-    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <header>
-    <h1 class="large-heading">. . . . . . . . .... on the road</h1>
+    <h1 class="large-heading">. . . on the road</h1>
 </header>
 
 <nav>
@@ -41,61 +31,55 @@
 
 <main>
     <section id="Europe">
-        <h1 class="medium-heading">Europe</h1>
-        <h3 class="small-heading">Homebase and the continent I traveled the most. From the Azores in the West to Istanbul in the East. From Tarifa in the South (or Malta) to Stockholm in the North.</h3>
-        <div id="mapEurope" style="height: 500px;"></div>
+        <h2 class="medium-heading">Europe</h2>
+        <h3 class="small-heading">Homebase and the continent I traveled the most. From the Azores in the West to Istanbul in the East.</h3>
+        <div id="mapEurope" class="map-container"></div>
     </section>
 
     <section id="NAmerica">
-        <h1 class="medium-heading">North America</h1>
+        <h2 class="medium-heading">North America</h2>
         <h3 class="small-heading">Stops in North America - Let's go west.</h3>
-        <div id="mapNAmerica" style="height: 500px;"></div>
+        <div id="mapNAmerica" class="map-container"></div>
     </section>
 
     <section id="Asia">
-        <h1 class="medium-heading">Asia</h1>
+        <h2 class="medium-heading">Asia</h2>
         <h3 class="small-heading">Stops in Asia - Let's go east.</h3>
-        <div id="mapAsia" style="height: 500px;"></div>
+        <div id="mapAsia" class="map-container"></div>
     </section>
 
     <section id="Africa">
-        <h1 class="medium-heading">Africa</h1>
+        <h2 class="medium-heading">Africa</h2>
         <h3 class="small-heading">Stops in Africa - Let's go to the south.</h3>
-        <div id="mapAfrica" style="height: 500px;"></div>
+        <div id="mapAfrica" class="map-container"></div>
     </section>
 
     <section id="Oceania">
-        <h1 class="medium-heading">Oceania</h1>
+        <h2 class="medium-heading">Oceania</h2>
         <h3 class="small-heading">Still on the list as travel destinations</h3>
-        <div id="mapOceania" style="height: 500px;"></div>
+        <div id="mapOceania" class="map-container"></div>
     </section>
 
     <section id="SAmerica">
-        <h1 class="medium-heading">South America</h1>
+        <h2 class="medium-heading">South America</h2>
         <h3 class="small-heading">Still on the list as travel destinations</h3>
-        <div id="mapSAmerica" style="height: 500px;"></div>
+        <div id="mapSAmerica" class="map-container"></div>
     </section>
 </main>
 
 <footer>
     <div class="bottom-container">
-        <a class="link-link" href="index.html" target="_blank">Back to my Website</a>
+        <a class="link-link" href="../index.html">RETURN_TO_BASE</a>
         <p class="copyright">
-            &copy; your curious traveler Ulrike. <span id="current-year"></span> All rights reserved.
+            &copy; Ulrike Herold - <span id="current-year"></span> // Moving with the flow.
         </p>
         <script>
             document.getElementById('current-year').textContent = new Date().getFullYear();
         </script>
-        <article>
-            <p>First published on: <time datetime="2024-11-22">November 22, 2024</time></p>
-            <p>Updated on: <time datetime="2026-05-24">May 24, 2026</time></p>
-        </article>
     </div>
 </footer>
 
-
 <script>
-    // Function to generate random colors
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = '#';
@@ -105,10 +89,9 @@
         return color;
     }
 
-    // Function to create a circle marker with a random color and size based on visits
     function createCircleMarker(map, lat, lng, popupText, visits) {
         const randomColor = getRandomColor();
-        const size = Math.min(20 + visits * 2, 50); // Adjust the size based on visits
+        const size = Math.min(20 + visits * 2, 50);
         const circleMarker = L.divIcon({
             className: 'custom-circle-marker',
             html: `<svg width="${size}" height="${size}" viewBox="0 0 20 20">
@@ -121,7 +104,6 @@
             .bindPopup(popupText);
     }
 
-    // Initialize maps
     const mapEurope = L.map('mapEurope').setView([50.5, 10.0], 4);
     const mapNAmerica = L.map('mapNAmerica').setView([37.8, -96.9], 3);
     const mapAsia = L.map('mapAsia').setView([24.0, 100.0], 3);
@@ -129,7 +111,6 @@
     const mapOceania = L.map('mapOceania').setView([-27.0, 133.0], 4);
     const mapSAmerica = L.map('mapSAmerica').setView([-15.0, -60.0], 3);
 
-    // Add tile layers to maps
     const tileLayerUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
     const tileLayerOptions = { attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>' };
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapEurope);
@@ -139,27 +120,18 @@
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapOceania);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapSAmerica);
 
-    // Load CSV data and plot markers
     Papa.parse('Data/mapPlaces.csv', {
         download: true,
         header: true,
         skipEmptyLines: true,
         complete: function(results) {
-            if (!results || !results.data || results.data.length === 0) {
-                console.error('No data parsed from CSV. Check file path and content.');
-                alert('Could not parse data from Data/mapPlaces.csv. Please ensure the file is not empty and the path is correct on the server.');
-                return;
-            }
-
             results.data.forEach(row => {
                 const lat = parseFloat(row.latitude);
                 const lng = parseFloat(row.longitude);
 
                 if (row && !isNaN(lat) && !isNaN(lng)) {
-                    console.log(row); // Log each valid row to the console
                     const visits = parseInt(row.visits, 10) || 1;
                     const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Review: ${row.reviews}`;
-                    // const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Years: ${row.years}<br>Review: ${row.reviews}`;
                     const continent = (row.continent || '').trim().replace(/^"|"$/g, '');
                     switch (continent) {
                         case 'Europe':
@@ -183,10 +155,6 @@
                     }
                 }
             });
-        },
-        error: function(error) {
-            console.error('Error loading or parsing CSV:', error);
-            alert('Could not load Data/mapPlaces.csv. Check that the file exists at the correct path on the server and is accessible.');
         }
     });
 </script>
