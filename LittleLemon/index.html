@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Lemon</title>
+    <title>Little Lemon | Mediterranean Flavors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>A porfolio website</h1>
-        <img src="Little-Lemon-logos/logo.png" alt="Little Lemon Logo" class="logo">
-        <img src="Little-Lemon-logos/sol2.png" alt="Rising Sun" class="rising-sun">
+        <img src="Little-Lemon-logos/logo.png" alt="Logo" class="logo">
+        <h1>Little Lemon</h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
             <li><a href="#Antipasti">Antipasti</a></li>
             <li><a href="#Pasta">Pasta</a></li>
             <li><a href="#Desserts">Desserts</a></li>
@@ -25,48 +23,75 @@
 
     <main>
         <section class="banner">
-            <h1>Winter break promotion at Little Lemon</h1>
-            <p> 25 % off on all Desserts</p>
+            <h1>Winter Break Special</h1>
+            <p>25% OFF ON ALL DESSERTS</p>
         </section>
+
         <section class="content">
+            <!-- Antipasti Section -->
             <div class="column" id="Antipasti">
-                <img src="Little-Lemon-logos/antipasti.jpg" alt="Antipasti">
-                <a href="MenuWebsites/indexAntipasti.html"><h2>Antipasti</h2></a>
-                <p>Our Vegetarian Antipasti platter is a delightful medley of fresh, seasonal vegetables, marinated olives, and savory cheeses, all inspired by the Mediterranean coastline. Roasted peppers, artichokes, sun-dried tomatoes, and a variety of pickled vegetables are paired with creamy ricotta and tangy feta cheese, creating the perfect starter to share with friends and family. Served with homemade crostini for that extra crunch!</p>
+                <div class="wordcloud">
+                    <span class="wc-1">Bruschetta</span>
+                    <span class="wc-2">Caprese</span>
+                    <span class="wc-4">Artichokes</span>
+                    <span class="wc-3">Olives</span>
+                    <span class="wc-2">Arancini</span>
+                    <span class="wc-3">Parmigiana</span>
+                    <span class="wc-4">Herbs</span>
+                    <span class="wc-1">Mozzarella</span>
+                </div>
+                <h2>Antipasti</h2>
+                <p>A delightful medley of fresh, seasonal vegetables and savory cheeses, inspired by the Mediterranean coastline.</p>
+                <a href="MenuWebsites/indexAntipasti.html" class="menu-link">View Menu</a>
             </div>
+
+            <!-- Pasta Section -->
             <div class="column" id="Pasta">
-                <img src="Little-Lemon-logos/pasta.jpg" alt="Pasta">
-                <a href="MenuWebsites/indexPasta.html"><h2>Pasta</h2></a>
-                <p>Indulge in our classic Pasta, made with hand-crafted pasta that’s always fresh and cooked to perfection. Our chefs combine traditional Italian techniques with modern twists, using rich, flavorful sauces like creamy carbonara, tangy marinara, or a zesty pesto. Each bite is a journey through Italy, with seasonal ingredients and spices that bring out the heart of Mediterranean cuisine. Perfect for any time of the day!</p>
+                <div class="wordcloud">
+                    <span class="wc-1">Penne</span>
+                    <span class="wc-3">Norma</span>
+                    <span class="wc-2">Fettuccine</span>
+                    <span class="wc-4">Alfredo</span>
+                    <span class="wc-1">Risotto</span>
+                    <span class="wc-3">Seafood</span>
+                    <span class="wc-2">Lasagna</span>
+                    <span class="wc-4">Bolognese</span>
+                </div>
+                <h2>Pasta</h2>
+                <p>Hand-crafted dough cooked to perfection, combining traditional Italian techniques with modern twists.</p>
+                <a href="MenuWebsites/indexPasta.html" class="menu-link">View Menu</a>
             </div>
+
+            <!-- Desserts Section -->
             <div class="column" id="Desserts">
-                <img src="Little-Lemon-logos/dessert.jpg" alt="Dessert">
-                <a href="MenuWebsites/indexDessert.html"><h2>Desserts</h2></a>
-                <p>No meal at Little Lemon is complete without our authentic Italian desserts. Indulge in a slice of velvety Tiramisu, rich in espresso flavor and layered with mascarpone cheese, or savor the delicate sweetness of our classic Cannoli, filled with ricotta cream and topped with chocolate chips. For those who love citrus, our refreshing Lemon Sorbet is the perfect end to your meal, offering a cool, tangy finish with a hint of sweetness. Each dessert is crafted with love and passion.</p>
+                <div class="wordcloud">
+                    <span class="wc-1">Tiramisu</span>
+                    <span class="wc-3">Panna Cotta</span>
+                    <span class="wc-2">Cannoli</span>
+                    <span class="wc-4">Ricotta</span>
+                    <span class="wc-1">Gelato</span>
+                    <span class="wc-3">Sorbet</span>
+                    <span class="wc-2">Lemon</span>
+                    <span class="wc-4">Pistachio</span>
+                </div>
+                <h2>Desserts</h2>
+                <p>Authentic Italian sweets crafted with love. From velvety tiramisu to refreshing lemon sorbet.</p>
+                <a href="MenuWebsites/indexDessert.html" class="menu-link">View Menu</a>
             </div>
         </section>
     </main>
+
     <footer>
-
-            <div class="return-link">
-                <a href="../index.html" class="return-button">Return to Home</a>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; Ulrike Herold - <span id="current-year"></span> // All rights reserved.</p>
+                <p>Family-owned Mediterranean restaurant focused on traditional recipes.</p>
+                <a href="../index.html" class="return-button">RETURN_TO_BASE</a>
             </div>
-
-        <div class="footer-logo">
-            <img src="Little-Lemon-logos/logo.png" alt="Little Lemon Footer Logo">
         </div>
-        <div class="footer-info">
-            <p class="copyright">&copy; Ulrike Herold - <span id="current-year"></span> All rights reserved.</p>
-            <p>Little Lemon. Family-owned Mediterranean restaurant in Somewhere.</p>
-            <script>
-              document.getElementById('current-year').textContent = new Date().getFullYear();
-                 </script>
-            <article> <h4>Little Lemon </h4>
-                <p>First published on: <time datetime="2025-02-23">February 23, 2025</time></p>
-                <!-- <p>Updated on: <time datetime="2024-12-26">December 26, 2024</time></p> -->
-                </article>
-  
-        </div>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
     </footer>
 </body>
 </html>
