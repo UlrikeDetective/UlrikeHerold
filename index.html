@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Ulrike | Data & Creativity</title>
     <meta property="og:title" content="Ulrike's Website">
     <meta property="og:type" content="website">
     <meta property="og:image" content="pictures/hackergirl_on_the_beach03.png">
@@ -15,173 +15,126 @@
     <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="hero">
-            <div class="hero-text">
-                <h1>I'm Ulrike</h1>
-                <img class="hackergirl_on_the_beach03" src="./pictures/hackergirl_on_the_beach03.png" alt="ulrike-profile-img">
-                <h3>a data enthusiast, civil servant, coffee lover and creative adventurist</h3>
-            </div>
-        </div>
+        <h1>I'm Ulrike<span class="cursor"></span></h1>
+        <p class="subtitle">Data enthusiast // Civil servant // Coffee lover // Creative adventurist</p>
     </header>
-    
 
     <nav>
         <ul>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#world">On the Road</a></li>
-            <li><a href="#about">About Me</a></li>
+            <li><a href="#world">Travel</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
     <main>
         <section id="resume">
-            <div class="profile">
-                <h2>Hello</h2>
-                <div class="parent">
-                    <div class="typing">
-                        <img src="./pictures/cropped_image.png" alt="profile Ulrike">
-                    </div>
-                    <div class="coding">
-                        <h3>Data Whiz with a Creative Soul</h3>
-                        <p>By day, I navigate through the councils of the City of Leipzig, making sure their work tell a clear story.  But when I'm not wrangling agendas, motions, notes, dashboards and spreadsheets, you can find me...</p>
-                            
-                        <p>Wandering through art galleries, biennales, museums and streets and letting the art spark my own creativity. (I love using Lightroom, AI, and Photoshop to capture the world through my lens!)</p>
-                            
-                        <p>Or maybe I'm gliding through a river on my (rented) kayak, or exploring new paths on two wheels.   Nature is my happy place, and a good dose of yoga keeps me balanced.</p>
-                            
-                        So, what's the connection? It's all about finding beauty and understanding. Data tells a story, art tells a story, and nature whispers its own wisdom. I love finding the connections and sharing them with the world!</p>
-                    </div>
+            <h2>System Overview</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="./pictures/cropped_image.png" alt="profile Ulrike" class="profile-img">
+                    <h3>Data Whiz with a Creative Soul</h3>
+                    <p>Navigating the councils of Leipzig by day, crafting data stories and exploring art by night. I find the connections between data, nature, and creativity.</p>
                 </div>
-
-                <h2>Resume</h2>
-                <div class="parent">
-                    <div class="typing">
-                        <img src="./pictures/sun_and_waves.png" alt="sun and waves">
-                    </div>
-                    <div class="coding">
-                        <h3>Work</h3>
-                        <p>Civil servant, fostering collaboration and driving efficiency. </p>
-                        <p>Explore my project reports to learn more about my work.</p>
-                        <h3>Data &amp; Analytics</h3>
-                        <p>I'm a data enthusiast. Numbers whisper secrets to me.  I translate them into insights through data visualization and coding with the help of powerful tools like R, Python, MySQL, and Tableau.</p>
-                        
-                    </div>
+                <div class="card">
+                    <img src="./pictures/sun_and_waves.png" alt="sun and waves" class="profile-img">
+                    <h3>Experience</h3>
+                    <p>Civil servant driving collaboration and efficiency. Data enthusiast translating numbers into insights with R, Python, MySQL, and Tableau.</p>
                 </div>
-                
+            </div>
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="parent">
-                <div class="typing">
-                    <img src="./pictures/insekt_02.png" alt="colorful insect">
+            <h2>Output Cache</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="./pictures/hackergirl_on_the_beach02ai.png" alt="Tech Layoffs Analysis" class="card-img">
+                    <div class="tags">
+                        <span class="tag">Data</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <h3>Tech Layoffs 2020-2025</h3>
+                    <p>Comprehensive analysis of global tech industry layoffs and trends.</p>
+                    <a href="https://github.com/UlrikeDetective/DataScienceProjects/tree/main/tech_layoffs" target="_blank" class="link-btn">View Source</a>
                 </div>
-                <div class="coding">
-                    <h3>Work projects</h3>
-                    <li> <a class="link-link" href="https://ratsinformation.leipzig.de/allris_leipzig_public/vo020?VOLFDNR=2013109&refresh=false" target="_blank">Local council budget </a>(in German - Stadtbezirksbudget)</li>
-                    <li><a class="link-link" href="https://www.leipzig.de/buergerservice-und-verwaltung/stadtrat/ortschaftsraete/" target="_blank">Survey of Leipzigs outer districts </a>(in German - Ortschaftsbefragung)</li>
-                    <h3>Github &amp; Kaggle</h3>
-                    <li><a class="link-link" href="https://github.com/UlrikeDetective/DataScienceProjects/tree/main/tech_layoffs" target="_blank">Github: Tech layoffs 2020 - 2025</a></li>
-                    <li><a class="link-link" href="https://github.com/UlrikeDetective/DataScienceProjects/tree/main/youtube" target="_blank">Github: Analysis of different Youtube Channels</a></li>
-                    <li><a class="link-link" href="https://www.kaggle.com/code/ulrikeherold/the-oscar-award-1927-2024-all-about-movies" target="_blank">Kaggle: The Oscar Awards: 1927 - 2024</a></li>
-                    <li><a class="link-link" href="https://www.kaggle.com/code/ulrikeherold/geodata-for-exercises" target="_blank">Kaggle: Geodata-for-exercises</a></li>
-                    <h3>Porfolio Projects</h3>
-                    <li><a class="link-link" href="LittleLemon/index.html" target="_blank">Little Lemon - Restaurant website</a></li>
-                    <li><a class="link-link" href="LuckyShrub/index.html" target="_blank">Lucky Shrub - A retail website</a></li>
-                    <h3>Blog Posts</h3>
-                    <li><a class="link-link" href="oscars/blog.html" target="_blank">Blog Post - Oscar Awards - Gen AI Capstone Project</a></li>
-                    <h3>Hackathons / Coding Challenges</h3>
-                    <li><a class="link-link" href="https://ulrikedetective.github.io/hackathon/" target="_blank">Overview over Projects </a></li>
-                    <li><a class="link-link" href="https://ulrikedetective.github.io/hackathon/portfolio/" target="_blank">DEV - New Year, New You Portfolio Challenge </a></li>
-                                        <h3>CSS Projects</h3>
-                    <li><a class="link-link" href="https://codepen.io/Ulrike-Herold/pen/gbwYMam" target="_blank">24 hours at the Golden Gate Bridge</a></li>
-                    <li><a class="link-link" href="https://codepen.io/Ulrike-Herold/pen/EayRmVJ" target="_blank">Zen - GameOver </a></li>
-                    <li><a class="link-link" href="https://codepen.io/Ulrike-Herold/pen/jErpPzK" target="_blank">CSS - Named Colors </a></li>
-                    <li><a class="link-link" href="https://ulrikedetective.github.io/hackathon/FrontEndHalloween/" target="_blank">Halloween "to do list" - CSS Art Competion </a></li>
+                <div class="card">
+                    <img src="./pictures/insekt.png" alt="Oscar Awards Analysis" class="card-img small">
+                    <div class="tags">
+                        <span class="tag">Analysis</span>
+                        <span class="tag">Kaggle</span>
+                    </div>
+                    <h3>Oscar Awards Analysis</h3>
+                    <p>Deep dive into the history of the Academy Awards (1927-2024).</p>
+                    <a href="https://www.kaggle.com/code/ulrikeherold/the-oscar-award-1927-2024-all-about-movies" target="_blank" class="link-btn">Explore Data</a>
+                </div>
+                <div class="card">
+                    <img src="./pictures/butterfly.png" alt="Zen GameOver" class="card-img small">
+                    <div class="tags">
+                        <span class="tag">FrontEnd</span>
+                        <span class="tag">CSS Art</span>
+                    </div>
+                    <h3>Zen - GameOver</h3>
+                    <p>A meditative CSS-based breathing exercise app.</p>
+                    <a href="https://codepen.io/Ulrike-Herold/pen/EayRmVJ" target="_blank" class="link-btn">Live Demo</a>
+                </div>
+                <div class="card">
+                    <img src="./pictures/hackergirl_on_the_beach03.png" alt="Little Lemon Restaurant" class="card-img">
+                    <div class="tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Portfolio</span>
+                    </div>
+                    <h3>Little Lemon</h3>
+                    <p>Restaurant website interface and user experience experiment.</p>
+                    <a href="LittleLemon/index.html" target="_blank" class="link-btn">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="./pictures/MyTravelMapEurope.png" alt="Travel Map" class="card-img">
+                    <div class="tags">
+                        <span class="tag">Geodata</span>
+                        <span class="tag">Leaflet</span>
+                    </div>
+                    <h3>On the Road</h3>
+                    <p>Interactive travel map visualizing global footprints.</p>
+                    <a href="continent_map_pins.html" target="_blank" class="link-btn">View Map</a>
+                </div>
+                <div class="card">
+                    <img src="./pictures/bee_02.png" alt="The Debugged Life Blog" class="card-img small">
+                    <div class="tags">
+                        <span class="tag">Writing</span>
+                        <span class="tag">Blog</span>
+                    </div>
+                    <h3>The Debugged Life</h3>
+                    <p>Monthly recaps of coding, creative projects, and travel.</p>
+                    <a href="https://patterndisrupt.pythonanywhere.com/" target="_blank" class="link-btn">Read Blog</a>
                 </div>
             </div>
         </section>
 
-        <section id="world">
-            <h2>World</h2>
-            <div class="parent">
-                <div class="picture">
-                    <a class="link-link" href="continent_map_pins.html" target="_blank"><img src="./pictures/MyTravelMapEurope.png" alt="Map of Europe with pins" width = "90%"></a>
-                </div>
-                <div class="coding">
-                    <h3>On the road</h3>
-                    <li> <a class="link-link" href="continent_map_pins.html" target="_blank">Travel enthusiast </a></li>
-                    <p>Exploring the world. What places have you visited so fare?</p>
-
-                </div>
+        <section id="contact">
+            <h2>Ping / Connect</h2>
+            <div class="card">
+                <p>If you love data that tells a story and art that inspires, let's connect. I'm always open to intriguing algorithms and creative collaborations.</p>
+                <a href="mailto:UlrikeDetective@outlook.com" class="link-btn">SEND_MESSAGE</a>
             </div>
-        </section>
-        <section id="blog">
-            <h2>Blogs and other stuff</h2>
-            <div class="parent">
-                <div class="typing">
-                    <img src="./pictures/insekt_03.png" alt="colorful insect">
-                </div>
-                <div class="blog">
-                    <h3>The Debugged life</h3>
-                    <li> <a class="link-link" href="https://patterndisrupt.pythonanywhere.com/" target="_blank">Blog </a></li>
-                    <p>A monthly recap of my life. From coding to creative projects, to travel and more. </p>
-                    <h3>Serialized</h3>
-                    <li> <a class="link-link" href="https://ulrikeinteressiert-serialized.koyeb.app/" target="_blank">Short story blog </a></li>
-                    <p>Serialized is a blog of my short stories.</p>
-                </div>
-            </div>
-        </section>
-        
-        
-        <section id="about">
-            <h2>Get In Touch</h2>
-            <div class="parent">
-                <div class="typing"> 
-                    <img src="./pictures/hackergirl_on_the_beach02ai.png" alt="profile Ulrike">
-                </div>
-                <div class="typing">
-                <h3>If you love data that tells a story and art that inspires, you've come to the right place. </h3>
-                <p>And if your email subject line is as intriguing as a well-written algorithm, I'm all ears. </p>
-                </div>
-            </div>
-                </div>
-       <section id="contact">  
-            <div class="contact-me">
-                <a class="btn" href="mailto:UlrikeDetective@outlook.com <UlrikeDetective@outlook.com>">CONTACT ME</a>
-            </div>
-            
-            
         </section>
     </main>
 
     <footer>
-        <div class="bottom-container">
-            <a class="footer-link" href="https://www.linkedin.com/in/ulrike-herold/" target="_blank">LinkedIn</a>
-            <a class="footer-link" href="https://github.com/UlrikeDetective" target="_blank">Github</a>
-            <a class="footer-link" href="https://www.kaggle.com/ulrikeherold" target="_blank">Kaggle</a>
-            <a class="footer-link" href="https://www.instagram.com/ulrike_interessiert" target="_blank">Instagram</a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ulrike-herold/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/UlrikeDetective" target="_blank">Github</a>
+            <a href="https://www.kaggle.com/ulrikeherold" target="_blank">Kaggle</a>
+            <a href="https://www.instagram.com/ulrike_interessiert" target="_blank">Instagram</a>
         </div>
-        
-        <div class="bottom-container2">
-            <p class="copyright">&copy; Ulrike Herold - <span id="current-year"></span> All rights reserved.</p>
-            <script>
-              document.getElementById('current-year').textContent = new Date().getFullYear();
-                 </script>
-        </div>
-        <div class="bottom-container">
-            <article> <h4>My Website `<time>` Element</h4>
-              <p>First published on: <time datetime="2024-05-22">May 22, 2024</time></p>
-              <p>Updated on: <time datetime="2024-12-26">December 26, 2024</time></p>
-            </article>
-        </div>
-        
+        <p class="copyright">&copy; Ulrike Herold - <span id="current-year"></span> // All rights reserved.</p>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
     </footer>
-    
 </body>
 </html>
