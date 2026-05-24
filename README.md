@@ -1,7 +1,7 @@
 # A snapshot
 *My digital space into the universe.*
 
-![Sun and Waves](pictures/sun_and_waves2.png)
+![Sun and Waves](pictures/hackergirl_on_the_beach03.png)
 
 ---
 
