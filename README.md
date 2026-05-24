@@ -1,7 +1,7 @@
 # A snapshot
 *My digital space into the universe.*
 
-![Sun and Waves](pictures/hackergirl_on_the_beach03.png)
+![Sun and Waves](pictures/sun_and_waves2.png)
 
 ---
 
@@ -14,14 +14,12 @@ This repository serves as the backbone of my personal website and public online 
 A structured view of the various paths:
 
 ☀️ `index.html` — The main gate and personal portfolio.  
-🌊 `continent_map_pins.html` — The gate into my travel journey.  
+🌊 `travelmap/index.html` — The gate into my travel journey.  
 ☀️ `styles.css` — The visual foundation of the site.  
 🌊 `LittleLemon/` — A restaurant interface experiment.  
 ☀️ `LuckyShrub/` — A retail and landscaping design project.  
 🌊 `oscars/` — Explorations into cinematic data and blog posts.  
-☀️ `Data/` — Raw materials and datasets powering the insights.  
 🌊 `pictures/` — Visual memories and assets.  
-
 ---
 
 ## The Journey
