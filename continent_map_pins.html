@@ -12,7 +12,7 @@
     <meta property="og:locale" content="en_DE">
     <meta property="og:site_name" content="Where I've been so fare!">
 
-    <link rel="stylesheet" href="public/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <link rel="stylesheet" href="./public/styles/main.css">
@@ -34,7 +34,7 @@
         <li><a href="#NAmerica">North America</a></li>
         <li><a href="#Asia">Asia</a></li>
         <li><a href="#Africa">Africa</a></li>
-        <li><a href="#Oceana">Oceania</a></li>
+        <li><a href="#Oceania">Oceania</a></li>
         <li><a href="#SAmerica">South America</a></li>
     </ul>
 </nav>
@@ -64,7 +64,7 @@
         <div id="mapAfrica" style="height: 500px;"></div>
     </section>
 
-    <section id="Oceana">
+    <section id="Oceania">
         <h1 class="medium-heading">Oceania</h1>
         <h3 class="small-heading">Still on the list as travel destinations</h3>
         <div id="mapOceania" style="height: 500px;"></div>
@@ -160,7 +160,8 @@
                     const visits = parseInt(row.visits, 10) || 1;
                     const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Review: ${row.reviews}`;
                     // const popupText = `<b>${row.city}</b><br>Visits: ${row.visits}<br>Years: ${row.years}<br>Review: ${row.reviews}`;
-                    switch (row.continent) {
+                    const continent = (row.continent || '').trim().replace(/^"|"$/g, '');
+                    switch (continent) {
                         case 'Europe':
                             createCircleMarker(mapEurope, lat, lng, popupText, visits);
                             break;
