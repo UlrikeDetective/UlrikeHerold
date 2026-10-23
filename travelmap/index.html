@@ -111,7 +111,7 @@
     const mapOceania = L.map('mapOceania').setView([-27.0, 133.0], 4);
     const mapSAmerica = L.map('mapSAmerica').setView([-15.0, -60.0], 3);
 
-    const tileLayerUrl = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
+    const tileLayerUrl = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_34h2_3_487361326dec0a566ff8242e';
     const tileLayerOptions = { attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>' };
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapEurope);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapNAmerica);
