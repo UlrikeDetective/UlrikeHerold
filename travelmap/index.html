@@ -42,6 +42,12 @@
         <div id="mapNAmerica" class="map-container"></div>
     </section>
 
+    <section id="CAmerica">
+        <h2 class="medium-heading">Central America</h2>
+        <h3 class="small-heading">Stops in Central America - Vamos.</h3>
+        <div id="mapCAmerica" class="map-container"></div>
+    </section>
+
     <section id="Asia">
         <h2 class="medium-heading">Asia</h2>
         <h3 class="small-heading">Stops in Asia - Let's go east.</h3>
@@ -105,7 +111,8 @@
     }
 
     const mapEurope = L.map('mapEurope').setView([50.5, 10.0], 4);
-    const mapNAmerica = L.map('mapNAmerica').setView([37.8, -96.9], 3);
+    const mapNAmerica = L.map('mapNAmerica').setView([37.8, -96.9], 3.4);
+    const mapCAmerica = L.map('mapCAmerica').setView([18.2, -77.3], 4.4);
     const mapAsia = L.map('mapAsia').setView([24.0, 100.0], 3);
     const mapAfrica = L.map('mapAfrica').setView([0.0, 20.0], 3);
     const mapOceania = L.map('mapOceania').setView([-27.0, 133.0], 4);
@@ -115,6 +122,7 @@
     const tileLayerOptions = { attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>' };
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapEurope);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapNAmerica);
+    L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapCAmerica);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapAsia);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapAfrica);
     L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(mapOceania);
@@ -139,6 +147,9 @@
                             break;
                         case 'North America':
                             createCircleMarker(mapNAmerica, lat, lng, popupText, visits);
+                            break;
+                        case 'Central America':
+                            createCircleMarker(mapCAmerica, lat, lng, popupText, visits);
                             break;
                         case 'Asia':
                             createCircleMarker(mapAsia, lat, lng, popupText, visits);
